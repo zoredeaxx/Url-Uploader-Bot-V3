@@ -1,6 +1,6 @@
 
 
-
+from wserver import keep_alive
 import os
 from Uploader.config import Config
 from pyrogram import Client as Tellyhub
@@ -17,3 +17,4 @@ if __name__ == "__main__" :
     sleep_threshold=120,
     plugins=plugins)
     Tellybots.run()
+keep_alive()
