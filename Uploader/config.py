@@ -11,11 +11,11 @@ logging.basicConfig(
 
 class Config(object):
     # get a token from https://chatbase.com
-    CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
+    #CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
     # get a token from @BotFather
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     # The Telegram API things
-    API_ID = int(os.environ.get("API_ID", 12345))
+    API_ID = int(os.environ.get("API_ID"))
     API_HASH = os.environ.get("API_HASH")
     # Get these values from my.telegram.org
     # Array to store users who are authorized to use the bot
@@ -46,7 +46,7 @@ class Config(object):
     DEF_WATER_MARK_FILE = ""
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
     SESSION_NAME = os.environ.get("SESSION_NAME", "Rename-Bot-0")
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
     LOGGER = logging
     OWNER_ID = int(os.environ.get("OWNER_ID", ""))
     # Update channel for Force Subscribe
