@@ -180,18 +180,6 @@ async def youtube_dl_call_back(bot, update):
             download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
             # https://stackoverflow.com/a/678242/4723940
             file_size = os.stat(download_directory).st_size
-        try:
-            if tg_send_type == 'video' and 'webm' in download_directory:
-                ownload_directory = download_directory.rsplit('.', 1)[0] + '.mkv'
-                os.rename(download_directory, ownload_directory)
-                download_directory = ownload_directory
-        except:
-            pass 
-        if file_size > Config.TG_MAX_FILE_SIZE:
-            await bot.edit_message_text(
-                chat_id=update.message.chat.id,
-                text=Translation.RCHD_TG_API_LIMIT.format(time_taken_for_download, humanbytes(file_size)),
-                message_id=update.message.message_id
             )
         else:
 
