@@ -51,14 +51,20 @@ Maintained By : [Tellybots](https://telegram.me/TellyBots)
 **🦊 Maintained By :** [NaysaBots](https://t.me/NaysaBots)
 
 """
-
-
     PROGRESS = """
-🔰 Speed : {3}/s\n\n
-🌀 Done : {1}\n\n
-🎥 Tᴏᴛᴀʟ sɪᴢᴇ  : {2}\n\n
-⏳ Tɪᴍᴇ ʟᴇғᴛ : {4}\n\n
-"""
+🔗 Percentage : {0}%\n
+🌀 Dᴏɴᴇ : {1}\n
+🎥 Tᴏᴛᴀʟ sɪᴢᴇ  : {2}\n
+🔰 Sᴘᴇᴇᴅ : {3}/s\n
+⏳ Tɪᴍᴇ ʟᴇғᴛ : {4}\n
+    """
+
+    #PROGRESS = """
+#🔰 Speed : {3}/s\n\n
+#🌀 Done : {1}\n\n
+#🎥 Tᴏᴛᴀʟ sɪᴢᴇ  : {2}\n\n
+#⏳ Tɪᴍᴇ ʟᴇғᴛ : {4}\n\n
+#"""
     ID_TEXT = """
 🆔 Your Telegram ID 𝐢𝐬 :- <code>{}</code>
 """
