@@ -18,3 +18,4 @@ aiofiles
 pyromod
 yt-dlp
 flask
+ffmpeg-python
