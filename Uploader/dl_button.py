@@ -243,13 +243,13 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
         content_type = response.headers["Content-Type"]
         if "text" in content_type and total_length < 500:
             return await response.release()
-        await bot.edit_message_text(
-            chat_id,
-            message_id,
-            text="""Initiating Download
-**🔗 Uʀʟ :** `{}`
-**🗂️ Sɪᴢᴇ :** {}""".format(url, humanbytes(total_length))
-        )
+        #await bot.edit_message_text(
+            #chat_id,
+            #message_id,
+            #text="""Initiating Download
+#**🔗 Uʀʟ :** `{}`
+#**🗂️ Sɪᴢᴇ :** {}""".format(url, humanbytes(total_length))
+        #)
         with open(file_name, "wb") as f_handle:
             while True:
                 chunk = await response.content.read(Config.CHUNK_SIZE)
