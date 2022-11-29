@@ -1,23 +1,4 @@
 
-zoredeaxx
-/
-Url-Uploader-Bot-V3
-Public
-forked from Tellybots/Url-Uploader-Bot-V3
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Url-Uploader-Bot-V3/Uploader/dl_button.py
-@zoredeaxx
-zoredeaxx Update dl_button.py
- 2 contributors
-283 lines (269 sloc)  11.4 KB
-
 # Copyright @Tellybots | @Shrimadhav Uk
 import logging
 logging.basicConfig(level=logging.DEBUG,
