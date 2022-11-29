@@ -22,6 +22,9 @@ from hachoir.parser import createParser
 from PIL import Image
 from pyrogram import enums 
 
+
+
+
 async def ddl_call_back(bot, update):
     #logger.info(update)
     cb_data = update.data
@@ -230,6 +233,7 @@ async def ddl_call_back(bot, update):
             disable_web_page_preview=True
         )
 
+
 async def download_coroutine(bot, session, url, file_name, chat_id, message_id, start):
     downloaded = 0
     display_message = ""
@@ -238,13 +242,6 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
         content_type = response.headers["Content-Type"]
         if "text" in content_type and total_length < 500:
             return await response.release()
-        await bot.edit_message_text(
-            chat_id,
-            message_id,
-            text="""Initiating Download
-**🔗 Uʀʟ :** `{}`
-**🗂️ Sɪᴢᴇ :** {}""".format(url, humanbytes(total_length))
-        )
         with open(file_name, "wb") as f_handle:
             while True:
                 chunk = await response.content.read(Config.CHUNK_SIZE)
@@ -262,14 +259,11 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
                         (total_length - downloaded) / speed) * 1000
                     estimated_total_time = elapsed_time + time_to_completion
                     try:
-                        current_message = """**DᴏᴡɴʟᴏᴀᴅɪɴG**
-**🔗 Uʀʟ :** `{}`
-
-**🗂️ Sɪᴢᴇ :** {}
-
-**✅ Dᴏɴᴇ :** {}
-
-**⏱️ Eᴛᴀ :** {}""".format(
+                        current_message = """**Download Status**
+URL: {}
+File Size: {}
+Downloaded: {}
+ETA: {}""".format(
     url,
     humanbytes(total_length),
     humanbytes(downloaded),
