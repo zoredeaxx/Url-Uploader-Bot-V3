@@ -1,4 +1,3 @@
-
 # Copyright @Tellybots | @Shrimadhav Uk
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -12,15 +11,16 @@ import os
 import shutil
 import time
 from datetime import datetime
-from plugins.config import Config
-from plugins.script import Translation
-from plugins.thumbnail import *
-from plugins.database.database import db
+from Uploader.config import Config
+from Uploader.script import Translation
+from Uploader.thumbnail import *
+from Uploader.database.database import db
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from functions.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
+from Uploader.functions.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
+from pyrogram import enums 
 
 async def ddl_call_back(bot, update):
     #logger.info(update)
